@@ -1,0 +1,17 @@
+
+p.signup-prompt {
+  margin-top: 58px;
+  margin-bottom: 16px;
+}
+
+.login-btn {
+  background:red;
+}
+
+.login-btn:hover {
+  background-color: #303030;
+}
+
+.login-btn:active {
+  background-color: #303030;
+}
