@@ -59,11 +59,11 @@ if (isset($_SESSION['email'])) {
               $error = urldecode($_GET['error']);
               if ($error == 'email does not exist') {
                 echo '<div class="alert-box alert alert-danger" role="alert">';
-                echo 'Account does not exist, create now.';
+                echo 'La cuenta no existe, créala ahora.';
                 echo '</div>';
               } elseif ($error == 'password incorrect') {
                 echo '<div class="alert-box alert alert-danger" role="alert">';
-                echo 'Incorrect credentials, try again.';
+                echo 'Credenciales incorrectas, inténtalo de nuevo.';
                 echo '</div>';
               }
             }
