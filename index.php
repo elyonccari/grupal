@@ -45,11 +45,11 @@ if (isset($_SESSION['email'])) {
               $message = urldecode($_GET['success']);
               if ($message == 'account deleted') {
                 echo '<div class="alert-box alert alert-success" role="alert">';
-                echo 'Account deleted! Sign up another!';
+                echo '¡Cuenta borrada! ¡Regístrate otro!';
                 echo '</div>';
               } else {
                 echo '<div class="alert-box alert alert-success" role="alert">';
-                echo 'Account registered successfully!';
+                echo '¡Cuenta registrada satisfactoriamente!';
                 echo '</div>';
               }
             }

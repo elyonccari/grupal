@@ -96,6 +96,8 @@ if (!(isset($_SESSION['email']))) {
               <button class='edit-btn' type='submit'>
                 <i class='fa-solid fa-edit fa-lg' style='color: #555555;'></i>
               </button>
+              </form>
+            <form action='deleteTask.php' method='post'>
               <input type='hidden' name='taskId' value='$taskId'>
               <button class='delete-btn' type='submit'>
                 <i class='fa-solid fa-trash fa-lg' style='color: #555555;'></i>

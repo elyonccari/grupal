@@ -26,11 +26,11 @@ if (password_verify($password, $hashedPassword)) {
     session_start();
     $_SESSION['email'] = $email;
     $mysqli->close();
-    header('Location: allTasks.php');
+    header('Location: MenuPrincipal.php');
     exit();
 } else {
     // Contraseña incorrecta
-    $error_message = 'password incorrect';
+    $error_message = 'contraseña incorrecta';
     $mysqli->close();
     header('Location: login.php?error=' . urlencode($error_message));
     exit();
