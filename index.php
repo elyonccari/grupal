@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION['email'])) {
-  header('Location: allTasks.php');
+  header('Location: MenuPrincipal.php');
   exit();
 }
 
