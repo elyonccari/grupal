@@ -29,3 +29,45 @@ if ($mysqli->connect_error) {
 ```
 ## 2. Se crea el archivo index.php para implentar el login de ingreso
 ![Login de ingreso al aplicativo todolist](assets/login.png) 
+## 3 Se crea el archivo LoginAcc.php para la Autenticación de Usuario y Verificación de Contraseña
+```php
+<?php
+
+// Obtener el correo electrónico y la contraseña del formulario POST
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+// Requerir el archivo de conexión a la base de datos
+require_once 'Conexion.php';
+
+// Comprobar si el correo electrónico existe en la base de datos
+$sql = "SELECT * FROM users WHERE email = '$email'";
+$result = $mysqli->query($sql);
+
+if ($result->num_rows == 0) {
+    // El correo electrónico no fue encontrado en la base de datos
+    $error_message = 'El correo electrónico no existe';
+    $mysqli->close();
+    header('Location: index.php?error=' . urlencode($error_message));
+    exit();
+}
+
+// Obtener la contraseña hash almacenada en la base de datos
+$row = $result->fetch_assoc();
+$hashedPassword = $row['password'];
+
+if (password_verify($password, $hashedPassword)) {
+    // Contraseña correcta: Iniciar sesión
+    session_start();
+    $_SESSION['email'] = $email;
+    $mysqli->close();
+    header('Location: MenuPrincipal.php');
+    exit();
+} else {
+    // Contraseña incorrecta: Redirigir al formulario de inicio de sesión con un mensaje de error
+    $error_message = 'Contraseña incorrecta';
+    $mysqli->close();
+    header('Location: login.php?error=' . urlencode($error_message));
+    exit();
+}
+```
