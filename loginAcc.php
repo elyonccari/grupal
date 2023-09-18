@@ -32,6 +32,6 @@ if (password_verify($password, $hashedPassword)) {
     // Contraseña incorrecta
     $error_message = 'contraseña incorrecta';
     $mysqli->close();
-    header('Location: login.php?error=' . urlencode($error_message));
+    header('Location: index.php?error=' . urlencode($error_message));
     exit();
 }
