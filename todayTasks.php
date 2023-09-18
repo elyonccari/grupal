@@ -14,10 +14,10 @@ if (!(isset($_SESSION['email']))) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu principal</title>
+  <title>Menu</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/listatareas.png" />
+  <link rel="png" type="image/png" href="assets/listatareas.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,83 +41,54 @@ if (!(isset($_SESSION['email']))) {
     ?>
 
     <div class="tasks-container">
-      <form action="addTask.php" method="post">
-        <input class="form-details" type="text" required maxlength="44" name="taskTitleInput" id="taskTitleInput" placeholder="Nombre de la tarea">
-        <input class="form-details" type="date" required name="taskDueInput" id="taskDueInput" onfocus="this.showPicker()" onclick="this.showPicker()">
-        <div class="btn-group">
-          <input class="form-btn" type="reset" id="resetBtn" value="Borrar">
-          <input class="form-btn" type="submit" id="submitBtn" value="Agregar">
-        </div>
-      </form>
-
+      <div class="today-heading">Hoy</div>
       <div class="hrule"></div>
 
-     <!-- Renderizar tareas para el usuario actual -->
+     <!-- Renderizar tareas para el usuario actual
+      FILTRO: HOY -->
       <?php
 
       $email = $_SESSION['email'];
 
       require_once 'conexion.php';
 
-      $sql = "SELECT * FROM `tasks` WHERE `email` LIKE '$email'";
+      $sql = "SELECT * FROM `tasks` WHERE `email` LIKE '$email' AND `taskDue` = CURDATE();";
       $result = $mysqli->query($sql);
 
-     // si no se encuentran resultados
+      // si no se encuentran resultados
       if ($result->num_rows == 0) {
         echo "
-          
-          <div class='task-item'>
-            <div class='task-details'>
-              <p class='task-title'>Tus tareas se mostrarán aquí.</p>
-              <p class='task-due'>Con la fecha correspondiente</p>
-            </div>
+        <div class='task-item'>
+          <div class='task-details'>
+            <p class='task-title'>Tus tareas se mostrarán aquí.</p>
+            <p class='task-due'>con la fecha correspondiente</p>
           </div>
-
-          ";
+        </div>
+        ";
       }
 
-      // renderizar resultados
+      // de lo contrario, renderizar resultados
       else {
         while ($row = $result->fetch_assoc()) {
-
           $taskId = $row['taskId'];
           $taskTitle = $row['taskTitle'];
           $taskDue = $row['taskDue'];
-
           echo "
-          
           <div class='task-item'>
             <div class='task-details'>
               <p class='task-title'>$taskTitle</p>
               <p class='task-due'>$taskDue</p>
             </div>
-            <form action='' method='post'>
-            <input type='hidden' name='taskId' value='$taskId'>
-              <button class='edit-btn' type='submit'>
-                <i class='fa-solid fa-edit fa-lg' style='color: #555555;'></i>
-              </button>
-              <input type='hidden' name='taskId' value='$taskId'>
-              <button class='delete-btn' type='submit'>
-                <i class='fa-solid fa-trash fa-lg' style='color: #555555;'></i>
-              </button>
-            </form>
           </div>
-
           ";
         }
       }
-
-      $mysqli->close();
-
-      ?>
+      $mysqli->close(); ?>
     </div>
   </div>
+
   <script src="../Js/logout.js" defer></script>
   <script src="../Js/taskViews.js" defer></script>
-  <script src="../Js/deleteTask.js" defer></script>
-  <script>
-    document.querySelector("#taskTitleInput").focus();
-  </script>
 </body>
 
 </html>
