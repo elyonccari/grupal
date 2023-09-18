@@ -1,9 +1,9 @@
 # Documentacion del proyecto TodoList
  Este proyecto se desarrollara con lenguaje de programacion en php y como gestor de Base de Datos el MySQL y un poco de JavaScript.
-## 1 Conexion a la base de datos 
+## 1. Conexion a la base de datos 
 
 Primero, se establece una conexión a la base de datos MySQL utilizando PHP y la extensión MySQLi. A continuación, se detalla el código relevante:
-## Conexión a la Base de Datos
+### Conexión a la Base de Datos
 
 El siguiente código PHP se utiliza para establecer una conexión a la base de datos MySQL:
 
@@ -27,5 +27,5 @@ if ($mysqli->connect_error) {
     exit(); // Se sale del script
 }
 ```
-## Se crea el archivo index para implentar el login de ingreso
+## 2. Se crea el archivo index.php para implentar el login de ingreso
 ![Login de ingreso al aplicativo todolist](assets/login.png) 
