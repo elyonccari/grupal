@@ -26,3 +26,6 @@ if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
     exit(); // Se sale del script
 }
+```
+## Se crea el archivo index para implentar el login de ingreso
+
