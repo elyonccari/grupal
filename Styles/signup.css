@@ -54,11 +54,11 @@ p.login-prompt {
 }
 
 .login-prompt a {
-  color: #161616;
+  color: white;
   font-weight: 600;
 }
 
 .login-prompt a:hover {
-  color: #666;
+  color:white;
   text-decoration: none;
 }

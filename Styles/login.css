@@ -15,3 +15,16 @@ p.signup-prompt {
 .login-btn:active {
   background-color: #303030;
 }
+p.signup-prompt{
+  margin-top: 54px;
+}
+
+.signup-prompt a {
+  color: white;
+  font-weight: 600;
+}
+
+.signup-prompt a:hover {
+  color:white;
+  text-decoration: none;
+}

@@ -69,7 +69,7 @@ if (isset($_SESSION['email'])) {
             }
             ?>
 
-            <h2>Bienvenido de nuevo!!</h2>
+            <h2>Iniciar Sesion</h2>
             <p>Inicie sesión en su cuenta existente</p>
             <form action="loginAcc.php" method="post">
               <input type="email" required class="form-component form-text" name="email" placeholder="Dirección de correo electrónico" />
@@ -77,10 +77,9 @@ if (isset($_SESSION['email'])) {
               <input type="submit" class="form-component form-btn login-btn" value="Iniciar Sesion" />
             </form>
 
-            <p class="signup-prompt">¿aún no tienes una cuenta?</p>
-            <button type="button" onclick="location.href = 'signup.php';" class="form-component form-btn signup-btn">
-              Registrarse
-            </button>
+            <p class="signup-prompt">¿aún no tienes una cuenta?
+            <a href="signup.php">Registrarse</a>
+            </p>
           </div>
         </div>
       </div>
