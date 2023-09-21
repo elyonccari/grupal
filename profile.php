@@ -35,7 +35,7 @@ if (!(isset($_SESSION['email']))) {
     <h1 class="nav-brand">Aplicación ToDoList</h1>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="allTasks.php">Tareas</a>
+        <a class="nav-link" href="MenuPrincipal.php">Tareas</a>
       </li>
       <li class="nav-item">
         <a class="nav-link logout" href="logout.php">Cerrar Sesion</a>
@@ -45,7 +45,7 @@ if (!(isset($_SESSION['email']))) {
   <main>
     <div class="profile">
       <section class="details">
-        <img src="assets/welcome.svg" class="img-fluid">
+        <img src="assets/bienvenido.png" class="img-fluid">
         <h2>Bienvenido!!</h2>
         <p><?php echo $_SESSION["email"] ?>!</p>
       </section>

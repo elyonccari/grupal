@@ -52,12 +52,11 @@ if (!(isset($_SESSION['email']))) {
 
       <div class="hrule"></div>
 
-     <!-- Renderizar tareas para el usuario actual -->
       <?php
 
       $email = $_SESSION['email'];
 
-      require_once 'conexion.php';
+      require_once 'Conexion.php';
 
       $sql = "SELECT * FROM `tasks` WHERE `email` LIKE '$email'";
       $result = $mysqli->query($sql);

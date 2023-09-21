@@ -18,10 +18,10 @@ $result = $mysqli->query($sql);
 if (!$result) {
     $error_message = "insert error";
     $mysqli->close();
-    header("Location: allTasks.php?error=" . urlencode($error_message));
+    header("Location: MenuPrincipal.php?error=" . urlencode($error_message));
     exit();
 } else {
     $mysqli->close();
-    header("Location: allTasks.php?success=1");
+    header("Location: MenuPrincipal.php?success=1");
     exit();
 }
