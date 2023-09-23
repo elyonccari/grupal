@@ -31,8 +31,8 @@
         events: [
           <?php include 'calendarFeed.php' ?>
         ],
-        eventBackgroundColor: '#ff9494',
-        eventBorderColor: '#ff9494',
+        eventBackgroundColor: '#008000',
+        eventBorderColor: '#FF0000',
         eventTextColor: '#555555',
       });
       calendar.render();

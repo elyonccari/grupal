@@ -22,7 +22,7 @@ while ($row = $result->fetch_assoc()) {
   $taskDue = $row['taskDue'];
 
   $task = new stdClass();
-  // $task->id = $taskId;
+ 
   $task->title = $taskTitle;
   $task->start = $taskDue;
 

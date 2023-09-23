@@ -18,7 +18,7 @@ $result = $mysqli->query($sql);
 
 if ($result->num_rows > 0) {
     
-    $error_message = "email exists";
+    $error_message = "Existe el email";
     $mysqli->close();
     header("Location: signup.php?error=" . urlencode($error_message));
     exit();
@@ -31,12 +31,12 @@ if ($result->num_rows > 0) {
 
     if (!$result) {
        
-        $error_message = "insert error";
+        $error_message = "error de inserción";
         $mysqli->close();
         header("Location: signup.php?error=" . urlencode($error_message));
         exit();
     }
     $mysqli->close();
-    header("Location: login.php?success=1");
+    header("Location: index.php?success=1");
     exit();
 }

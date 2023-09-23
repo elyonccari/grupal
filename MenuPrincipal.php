@@ -90,12 +90,6 @@ if (!(isset($_SESSION['email']))) {
               <p class='task-title'>$taskTitle</p>
               <p class='task-due'>$taskDue</p>
             </div>
-            <form action='' method='post'>
-            <input type='hidden' name='taskId' value='$taskId'>
-              <button class='edit-btn' type='submit'>
-                <i class='fa-solid fa-edit fa-lg' style='color: #555555;'></i>
-              </button>
-              </form>
             <form action='deleteTask.php' method='post'>
               <input type='hidden' name='taskId' value='$taskId'>
               <button class='delete-btn' type='submit'>

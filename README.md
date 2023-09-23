@@ -71,3 +71,59 @@ if (password_verify($password, $hashedPassword)) {
     exit();
 }
 ```
+## 4 Se crea el archivo signupAcc.php para la Autenticación de registro de usuario.
+### Estructura del Código
+### El código consta de las siguientes partes:
+
+### 1. Recopilación de Datos del Formulario
+```php
+$email = $_POST['email'];
+$password = $_POST['password'];
+$confirmPassword = $_POST['confirmPassword'];
+
+```
+Estas líneas de código recopilan los datos enviados desde el formulario HTML mediante el método POST.
+### 2. Validación de Contraseña
+```php
+if ($password != $confirmPassword) {
+    $error_message = "Las contraseñas no coinciden";
+    header("Location: signup.php?error=" . urlencode($error_message));
+    exit();
+}
+```
+Esta sección verifica si la contraseña y su confirmación coinciden. Si no coinciden, se redirige al usuario de nuevo a la página de registro con un mensaje de error.
+### 3. Verificación de Duplicados
+```php
+$sql = "SELECT * FROM users WHERE email = '$email'";
+$result = $mysqli->query($sql);
+
+if ($result->num_rows > 0) {
+    $error_message = "Ya existe una cuenta con este correo electrónico";
+    $mysqli->close();
+    header("Location: signup.php?error=" . urlencode($error_message));
+    exit();
+}
+```
+Esta parte del código consulta la base de datos para verificar si ya existe un usuario con la misma dirección de correo electrónico. Si existe, se redirige al usuario de nuevo a la página de registro con un mensaje de error.
+### 4. Registro del Nuevo Usuario
+```PHP
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+$sql = "INSERT INTO users (email, password) VALUES ('$email', '$hashedPassword')";
+$result = $mysqli->query($sql);
+
+if (!$result) {
+    $error_message = "Error al insertar los datos";
+    $mysqli->close();
+    header("Location: signup.php?error=" . urlencode($error_message));
+    exit();
+}
+```
+En esta sección, se crea un hash de la contraseña del usuario y se insertan los datos del nuevo usuario en la base de datos. Si ocurre un error durante la inserción, se muestra un mensaje de error y se redirige al usuario de nuevo a la página de registro.
+### 5. Redirección al Inicio de Sesión
+```php
+$mysqli->close();
+header("Location: index.php?success=1");
+exit();
+```
+Finalmente, si el registro es exitoso, se cierra la conexión con la base de datos y se redirige al usuario a la página de inicio de sesión con un mensaje de éxito.
