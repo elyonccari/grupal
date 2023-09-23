@@ -72,7 +72,7 @@ if (password_verify($password, $hashedPassword)) {
 }
 ```
 ## 4 Se crea el archivo signupAcc.php para la Autenticación de registro de usuario.
-![Registro al aplicativo todolist](assets/registro.png) 
+![Registro al aplicativo todolist](assets/registro.PNG) 
 ### Estructura del Código
 ### El código consta de las siguientes partes:
 
@@ -129,4 +129,4 @@ exit();
 ```
 Finalmente, si el registro es exitoso, se cierra la conexión con la base de datos y se redirige al usuario a la página de inicio de sesión con un mensaje de éxito.
 ## MENU PRINCIPAL DE TODOLIST 
-![Menu principal del aplicativo todolist](assets/menu.png) 
+![Menu principal del aplicativo todolist](assets/menu.PNG) 
