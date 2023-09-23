@@ -130,3 +130,5 @@ exit();
 Finalmente, si el registro es exitoso, se cierra la conexión con la base de datos y se redirige al usuario a la página de inicio de sesión con un mensaje de éxito.
 ## MENU PRINCIPAL DE TODOLIST 
 ![Menu principal del aplicativo todolist](assets/menu.PNG) 
+## perfil de usuario DE TODOLIST 
+![Perfil de usuario aplicativo todolist](assets/perfil.PNG) 
