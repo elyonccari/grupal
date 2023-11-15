@@ -5,10 +5,10 @@
         <p><?php echo $_SESSION["email"] ?></p>
     </ul>
     <li class="nav-item">
-      <a class="nav-link" href="profile.php">Perfil</a>
+      <a class="nav-link" href="profile.php">Perfiles</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link logout" href="logout.php">Cerrar sesión</a>
+      <a class="nav-link logout" href="logout.php" >Cerrar sesión</a>
     </li>
   </ul>
 </nav>

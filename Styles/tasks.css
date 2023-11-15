@@ -21,7 +21,7 @@ body {
   grid-column: span 2;
   justify-content: space-between;
   padding: 0 28px;
-  border-bottom: 1px solid #dadce0;
+  border-bottom: 1px solid #a9aaad;
 }
 
 .navbar-nav {
@@ -89,15 +89,15 @@ body {
 .tasks-container {
   width: 100%;
   max-width: 653px;
-  background-color: #f6f6f6;
+  background-color: rgb(212, 255, 0);
   margin: 16px auto;
   border-radius: 8px;
   padding: 8px;
-  color: #555;
+  color: #0400ff;
 }
 
 .tasks-container input {
-  border: 1px solid #dfdfdf;
+  border: 1px solid hsl(190, 100%, 49%);
 }
 
 /* Task Form */
@@ -108,7 +108,7 @@ body {
   padding: 16px 24px;
   margin-bottom: 4px;
   font-weight: 600;
-  background-color: #f6f6f6;
+  background-color: #bcdff7;
   font-size: 0.875rem;
 }
 
@@ -136,21 +136,21 @@ body {
 }
 
 #resetBtn {
-  background-color: #fff;
-  color: #555;
+  background-color: #000000;
+  color: #a70a0a;
 }
 
 #resetBtn:hover {
-  background-color: #f0f0f0;
+  background-color: #000000;
 }
 
 #submitBtn {
-  background-color: #ff9494;
+  background-color: #ff0000;
   color: #fff;
 }
 
 #submitBtn:hover {
-  background-color: #ff7a7a;
+  background-color: #f70000;
 }
 
 /* Separator */
@@ -229,11 +229,11 @@ body {
 .calendar-container {
   width: 100%;
   max-width: 1080px;
-  background-color: #f6f6f6;
+  background-color: #00fe44;
   margin: 16px auto;
   border-radius: 8px;
   padding: 8px;
-  color: #555;
+  color: #ffffff;
 }
 
 /* MEDIA QUERY POINTS */
@@ -284,8 +284,8 @@ body {
 
 :root {
   --fc-button-text-color: #ffffff;
-  --fc-button-bg-color: #ff9494;
-  --fc-button-border-color: #ff9494;
+  --fc-button-bg-color: #001c71;
+  --fc-button-border-color: rgb(74, 0, 70);
   --fc-button-hover-bg-color: #fca8a8;
   --fc-button-hover-border-color: #fca8a8;
   --fc-button-active-bg-color: #fca8a8;
